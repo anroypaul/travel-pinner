@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeaderItem from "./HeaderItem";
 
 export default function Header() {
   return (
@@ -10,28 +11,22 @@ export default function Header() {
               <h3 className="text-2xl font-bold">Travel Pinner</h3>
             </div>
             <div className="flex space-x-4">
-              <Link href="/">
-                <a className="text-lg hover:text-orange-500 transition duration-300">Home</a>
-              </Link>
-              <Link href="/about">
-                <a className="text-lg hover:text-orange-500 transition duration-300">About</a>
-              </Link>
-              <Link href="/">
-                <a className="text-lg hover:text-orange-500 transition duration-300">My Lists</a>
-              </Link>
+              <HeaderItem link="/" title="Home" />
+              <HeaderItem link="/about" title="About" />
+              <HeaderItem link="/lists" title="My Lists" />
             </div>
           </div>
-          <div className="flex items-center space-x-1 py-5">
-            <Link href="/auth/login">
-              <a className="py-2 px-3 bg-blue-500 hover:bg-blue-600 text-white rounded transition duration-300">
-                Login
-              </a>
-            </Link>
-            <Link href="/auth/signup">
-              <a className="py-2 px-3 bg-yellow-900 hover:bg-yellow-800 text-white rounded transition duration-300">
-                Sign up
-              </a>
-            </Link>
+          <div className="flex items-center py-5 space-x-1">
+            <HeaderItem
+              link="/auth/login"
+              title="Login"
+              classNames="px-3 py-2 text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-600"
+            />
+            <HeaderItem
+              link="/auth/signup"
+              title="Sign Up"
+              classNames="px-3 py-2 text-white transition duration-300 bg-yellow-900 rounded hover:bg-yellow-800"
+            />
           </div>
         </div>
       </div>
